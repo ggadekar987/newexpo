@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "3",
-    "slug": "3",
+    "name": "newexpo",
+    "slug": "newexpo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -30,7 +30,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "3630b9e7-67f9-4501-bdf8-a7af793a7b6e"
+        "projectId": "2ef8e536-636e-4aea-a4e0-152e971185e0"
       }
     }
   }
