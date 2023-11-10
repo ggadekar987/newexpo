@@ -13,9 +13,21 @@ import { store } from "./src/redux/store";
 export default function App() {
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <MyStack />
-      </NavigationContainer>
+      <View style={styles.container2}>
+        <View style={[styles.box, styles.box1]}></View>
+        <View style={[styles.box, styles.box2]}>
+          <NavigationContainer>
+            <MyStack />
+          </NavigationContainer>
+        </View>
+        <View style={[styles.box, styles.box3]}>
+          <NavigationContainer>
+            <Stack.Navigator>
+              <Stack.Screen name="PhoneLogin" component={PhoneLogin} />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </View>
+      </View>
     </Provider>
   );
 }
@@ -52,6 +64,14 @@ function SettingsScreen({ navigation }: { navigation: any }) {
   );
 }
 
+import React from "react";
+import { Dimensions } from "react-native";
+
+const { height } = Dimensions.get("window");
+
+const box_count = 3;
+const box_height = height / box_count;
+
 function MyStack() {
   return (
     <Stack.Navigator>
@@ -69,5 +89,26 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  container2: {
+    flex: 1,
+    flexDirection: "column",
+  },
+  box: {
+    height: box_height,
+  },
+  box1: {
+    height: "10%",
+
+    backgroundColor: "#2196F3",
+  },
+  box2: {
+    height: "70%",
+
+    backgroundColor: "#8BC34A",
+  },
+  box3: {
+    height: "20%",
+    backgroundColor: "#e3aa1a",
   },
 });
